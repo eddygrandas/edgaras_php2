@@ -10,11 +10,11 @@
     $earned_pm = 800;
     $unknown_pm = rand(100, 500);
     $months = 24;
-    $wallet_forecast = $mano_pinigai - (24 * ($earned_pm - $spent_pm - $unknown_pm));
+    $wallet_forecast = $mano_pinigai - $months * ($earned_pm - $spent_pm - $unknown_pm);
     ?>
     <body>
         <p>
-            <?php print 'Po ' . $months . ' mėnesių(' . date("Y m d", strtotime('+' . $months . 'month')) . ')' . ', tikėtina turėsiu ' . $wallet_forecast . ' pinigų'; ?>
+            <?php print 'Po ' . $months . ' mėnesių (' . date("Y m d", strtotime('+' . $months . 'month')) . ')' . ', tikėtina turėsiu ' . $wallet_forecast . ' pinigų'; ?>
         </p>
     </body>
 </html>
