@@ -14,7 +14,7 @@
     ?>
     <body>
         <p>
-            <?php print 'Po ' . $months . ' (' . date("Y m d", strtotime('+' . $months . 'month')) . ')' . ', tikėtina turėsiu ' . $wallet_forecast . ' pinigų'; ?>
+            <?php print 'Po ' . $months . ' mėnesių(' . date("Y m d", strtotime('+' . $months . 'month')) . ')' . ', tikėtina turėsiu ' . $wallet_forecast . ' pinigų'; ?>
         </p>
     </body>
 </html>
