@@ -1,16 +1,14 @@
 <?php
-$distance = rand(500, 1000);
-$fuel_100km = 7.5;
-$fuel_price = 1.3;
-$kaina = round($fuel_price / $fuel_100km * $distance, 2);
-$litrai = $distance / 100 * $fuel_100km;
-$my_money = 100;
-$pirmyn = " galiu";
-$stop = " negaliu";
-if ($my_money <= $kaina) {
-    $kelione = $stop;
-} else {
-    $kelione = $pirmyn;
+$grizai_velai = rand(0, 1);
+$grizai_isgeres = rand(0, 1);
+if ($grizai_velai && $grizai_isgeres) {
+    $text = "Miegosi ant sofos, nes grįžai vėlai ir išgėręs.";
+} elseif ($grizai_velai && !$grizai_isgeres) {
+    $text = "Nemiegosi ant sofos, nes grįžai neišgėręs.";
+} elseif (!$grizai_velai&&$grizai_isgeres) {
+    $text = "Nemiegosi ant sofos, nes negrįžai vėlai.";
+}else {
+    $text="Nemiegosi ant sofos nes buvai gerutis.";
 }
 ?>
 <!DOCTYPE html>
@@ -20,13 +18,7 @@ if ($my_money <= $kaina) {
         <title>kilometrai</title>
     </head>
     <body >
-        <p>
-            <?php
-            print "Nuvažiavus " . $distance . " km, mašina sunaudos "
-                    . $litrai . " kuro. Kaina: " . $kaina . " Išvada: Aš sau tai"
-                    . $kelione . " leisti.";
-            ?>
-        </p>
+        <h1><?php print $text; ?></h1>       
     </body>
 </html>
 
